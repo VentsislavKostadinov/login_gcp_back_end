@@ -40,4 +40,5 @@ jobs:
             --source . \
             --project "$PROJECT_ID" \
             --region "$REGION" \
-            --allow-unauthenticated
+            --allow-unauthenticated \
+            --set-env-vars "FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }}"
