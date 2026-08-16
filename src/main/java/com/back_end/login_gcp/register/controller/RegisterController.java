@@ -1,7 +1,7 @@
 package com.back_end.login_gcp.register.controller;
 
+import com.back_end.login_gcp.register.confirmation.dto.ConfirmRegistrationResponse;
 import com.back_end.login_gcp.register.dto.RegisterUserRequest;
-import com.back_end.login_gcp.register.dto.RegisterUserResponse;
 import com.back_end.login_gcp.register.service.UserRegistrationService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -22,8 +22,8 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    @ResponseStatus(HttpStatus.CREATED)
-    public RegisterUserResponse register(@Valid @RequestBody RegisterUserRequest request) {
+    @ResponseStatus(HttpStatus.OK)
+    public ConfirmRegistrationResponse register(@Valid @RequestBody RegisterUserRequest request) {
         return userRegistrationService.register(request);
     }
 }
